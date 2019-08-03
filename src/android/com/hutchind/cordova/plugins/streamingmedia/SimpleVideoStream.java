@@ -28,7 +28,7 @@ MediaPlayer.OnErrorListener, MediaPlayer.OnBufferingUpdateListener {
 	private VideoView mVideoView = null;
 	private MediaPlayer mMediaPlayer = null;
 	private MediaController mMediaController = null;
-	private ProgressBar mProgressBar = null;
+	//private ProgressBar mProgressBar = null;
 	private String mVideoUrl;
 	private Boolean mShouldAutoClose = true;
 	private boolean mControls;
@@ -53,15 +53,15 @@ MediaPlayer.OnErrorListener, MediaPlayer.OnBufferingUpdateListener {
 		relLayout.addView(mVideoView);
 
 		// Create progress throbber
-		mProgressBar = new ProgressBar(this);
-		mProgressBar.setIndeterminate(true);
+		//mProgressBar = new ProgressBar(this);
+		//mProgressBar.setIndeterminate(true);
 		// Center the progress bar
-		RelativeLayout.LayoutParams pblp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		pblp.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-		mProgressBar.setLayoutParams(pblp);
+		//RelativeLayout.LayoutParams pblp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		//pblp.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+		//mProgressBar.setLayoutParams(pblp);
 		// Add progress throbber to view
-		relLayout.addView(mProgressBar);
-		mProgressBar.bringToFront();
+		//relLayout.addView(mProgressBar);
+		//mProgressBar.bringToFront();
 
 		setOrientation(b.getString("orientation"));
 
@@ -71,7 +71,7 @@ MediaPlayer.OnErrorListener, MediaPlayer.OnBufferingUpdateListener {
 	}
 
 	private void play() {
-		mProgressBar.setVisibility(View.VISIBLE);
+		//mProgressBar.setVisibility(View.VISIBLE);
 		Uri videoUri = Uri.parse(mVideoUrl);
 		try {
 			mVideoView.setOnCompletionListener(this);
@@ -104,7 +104,7 @@ MediaPlayer.OnErrorListener, MediaPlayer.OnBufferingUpdateListener {
 			if (mVideoView.getCurrentPosition() > 0) {
 				// Video is not at the very beginning anymore.
 				// Hide the progress bar.
-				mProgressBar.setVisibility(View.GONE);
+				//mProgressBar.setVisibility(View.GONE);
 			} else {
 				// Video is still at the very beginning.
 				// Check again after a small amount of time.
